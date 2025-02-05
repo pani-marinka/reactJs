@@ -1,0 +1,193 @@
+* {
+  margin: 0 auto; /* Центрування по горизонталі */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bodyMain {
+  font-family: Arial, sans-serif;
+  max-width: 1170px;
+  margin: 0 auto; /* Центрування по горизонталі */
+ 
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+  background-color: white;
+  height: 60px;
+//   padding: 0 25px;
+//   max-width: 1170px;
+  margin: 0;
+  min-width: 360px; 
+}
+
+
+.content {
+    margin: 0;
+    flex-shrink: 0;
+    align-items: center;
+    position: relative;
+    width: 21px;
+    height: 16px;
+    background: white;
+    display: flex;
+    position: relative;
+   
+
+    .corner {
+      position: absolute;
+      width: 17px;
+      height: 12px;
+    }
+  
+    & .top-left {
+      background: #aa43c3;
+      border: 1px solid rgba(0, 0, 0, 0.87);
+      top: 0;
+      left: 0;
+    }
+  
+    & .bottom-right {
+      background: #1ac3e8;
+      border: 1px solid rgba(0, 0, 0, 0.87);
+      bottom: 0;
+      right: 0;
+    }    
+  }
+
+  .logo {
+    display: block;
+    flex-grow: 1;
+    margin-left: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+  }
+
+.nav-buttons {
+    margin: 0;
+    flex-shrink: 0;
+  display: flex;
+  gap: 10px; 
+}
+
+.btn {
+  width: 100px;
+  height: 34px;
+  background-color: #AA43C3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+/* Media Queries */
+
+.main {
+    display: flex;
+  flex-direction: column; /* Розташування елементів вертикально */
+  align-items: center; /* Вирівнювання по центру горизонтально */
+  justify-content: center; /* Вирівнювання по центру вертикально */
+  text-align: center;
+    background-position: top;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('/assets/images/title.jpg');
+    background-size: cover; /* Масштабування для покриття всієї площі */
+    background-position: center; /* Центрування зображення */
+    height: 650px;
+    padding: 0 25px;
+    max-width: 1170px;
+    margin: 0 auto;
+    object-fit: contain;
+    position: relative;
+   /* width: 100%; /* Встановлення ширини на 100% */
+   
+    min-width: 360px; 
+  }
+
+  .blockText {
+    // margin-left: auto;
+    // margin-right: auto;   
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  .mainText {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 20px;   
+
+  }
+
+
+
+@media (max-width: 1024px) {
+ 
+    .header {
+    max-width: 1024px;
+    padding: 0 25px;
+  }
+  .main {
+    background-position: top;
+    background-size: contain; /* Повне вміщення зображення */
+    background-repeat: no-repeat; /* Відсутність повторення */
+    max-width: 1024px;
+  }
+
+  .mainText {
+    font-size: 38px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 20px;   
+
+  }
+}
+
+.whiteLine {
+    height: 30px;
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.usersBlock {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid #ccc;
+  }
+
+@media (max-width: 768px) {
+  .header {
+    max-width: 768px;
+    padding: 0 15px;
+  }
+  .main {
+    background-position: top;
+    background-size: contain; /* Повне вміщення зображення */
+    background-repeat: no-repeat; /* Відсутність повторення */
+    max-width: 768px;
+  }
+     }
+
+@media (max-width: 360px) {
+  .header {
+    max-width: 360px;
+    padding: 0 5px;
+  }
+
+  .main {
+    background-position: top;
+    min-width: 360px;
+   object-fit: contain;
+    max-width: 360px;
+  }
+}
