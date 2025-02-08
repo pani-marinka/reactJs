@@ -1,28 +1,45 @@
 * {
-  margin: 0 auto; /* Центрування по горизонталі */
+  /*margin: 0 auto; /* Центрування по горизонталі */
   padding: 0;
   box-sizing: border-box;
+  background-color: #F8F8F8;
+  font-family: "Nunito", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 26px;
+  
 }
 
-.bodyMain {
-  font-family: Arial, sans-serif;
-  max-width: 1170px;
-  margin: 0 auto; /* Центрування по горизонталі */
- 
+h2 {
+ text-align: center;
+  font-size: 25px;
 }
+
+h4 {
+  color: gray;
+  font-size: 12px;
+}
+
+.bodyMain {  
+  max-width: 1170px;
+  margin: 0 auto; /* Центрування по горизонталі */ 
+}
+
+
 
 .header {
   display: flex;
   align-items: center;
-  
+ // background-color:white;
   justify-content: space-between;
-  background-color: white;
+
   height: 60px;
-//   padding: 0 25px;
-//   max-width: 1170px;
-  margin: 0;
+  margin: 0 20px;
   min-width: 360px; 
 }
+
+
 
 
 .content {
@@ -32,7 +49,7 @@
     position: relative;
     width: 21px;
     height: 16px;
-    background: white;
+
     display: flex;
     position: relative;
    
@@ -64,7 +81,7 @@
     margin-left: 25px;
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    //color: #333;
     white-space: nowrap;
   }
 
@@ -85,9 +102,13 @@
   border-radius: 15px;
 }
 
-/* Media Queries */
+.btn.disabled {
+  background-color: gray;  /* Сірий фон, коли кнопка неактивна */
+  cursor: not-allowed;  /* Блокування курсора */
+}
 
 .main {
+
     display: flex;
   flex-direction: column; /* Розташування елементів вертикально */
   align-items: center; /* Вирівнювання по центру горизонтально */
@@ -96,7 +117,7 @@
     background-position: top;
     align-items: center;
     justify-content: space-between;
-    background-image: url('/assets/images/title.jpg');
+    background-image: url('../..//../public/images/title.jpg');
     background-size: cover; /* Масштабування для покриття всієї площі */
     background-position: center; /* Центрування зображення */
     height: 650px;
@@ -106,8 +127,10 @@
     object-fit: contain;
     position: relative;
    /* width: 100%; /* Встановлення ширини на 100% */
-   
+   //background-color: transparent;
     min-width: 360px; 
+    //background: rgba(0,0,0,0.1);
+   background-color: rgba(0,0,0,0.95);  
   }
 
   .blockText {
@@ -116,17 +139,93 @@
     position: absolute;
     top: 50%;
     transform: translate(0,-50%);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+   
   }
 
   .mainText {
-    font-size: 16px;
-    font-weight: bold;
-    color: red;
-    margin-bottom: 20px;   
 
+      font-size: 40px;
+      line-height: 40px;
+
+    background-color: transparent;
+    //font-size: 28px;
+    //font-weight: bold;
+    //color: white;
+    margin-bottom: 20px;   
+    word-wrap: break-word;  /* Дозволяє переносити слова на новий рядок, якщо вони не вміщуються */
+    white-space: normal;    /* Переносить текст */
+    //background: rgba(0,0,0,0.3);  
   }
 
+  .btn-wrapper { // відцентрувати
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;   
+  }
 
+.radio-form-label {
+  padding-bottom: 10px;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //min-height: 100vh; // висота контейнера для вертикального центрування
+ 
+  .upload-container-lock {
+    width: 904px;
+   // padding: 16px;
+   
+  }
+}
+
+
+
+.successForm {
+  display: flex;
+flex-direction: column; /* Розташування елементів вертикально */
+align-items: center; /* Вирівнювання по центру горизонтально */
+justify-content: center; /* Вирівнювання по центру вертикально */
+text-align: center;
+  background-position: top;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('../..//../public/images/Register.jpg');
+  background-size: contain; /* Масштабування для покриття всієї площі */
+  background-position: center; /* Центрування зображення */
+  height: 380px;
+  padding: 0 25px;
+  max-width: 1024px;
+  margin: 0 auto;
+  object-fit: cover;
+  //position: relative;
+  width: 100%; /* Встановлення ширини на 100% */
+  //height: 100vh;
+  min-width: 360px; 
+  background-repeat: no-repeat;
+}
+
+
+  @media (min-width: 1170px) {
+    .main {
+      height: 650px;
+    }
+    .blockText {     
+      width: 300px;
+    }
+    
+    .mainText {
+      font-size: 28px;
+      white-space: normal; /* Дозволяє переносити текст при цьому розмірі екрану */
+    }
+  }
 
 @media (max-width: 1024px) {
  
@@ -136,15 +235,15 @@
   }
   .main {
     background-position: top;
-    background-size: contain; /* Повне вміщення зображення */
+    object-fit: cover; /* Повне вміщення зображення */
     background-repeat: no-repeat; /* Відсутність повторення */
     max-width: 1024px;
+    height: 650px;
   }
 
   .mainText {
-    font-size: 38px;
+    font-size: 28px;
     font-weight: bold;
-    color: red;
     margin-bottom: 20px;   
 
   }
@@ -152,7 +251,7 @@
 
 .whiteLine {
     height: 30px;
-    background-color: white;
+    //background-color: white;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -172,9 +271,10 @@
   }
   .main {
     background-position: top;
-    background-size: contain; /* Повне вміщення зображення */
+    object-fit: cover; /* Повне вміщення зображення */
     background-repeat: no-repeat; /* Відсутність повторення */
     max-width: 768px;
+    height: 500px;
   }
      }
 
@@ -186,8 +286,9 @@
 
   .main {
     background-position: top;
+    height: 500px;
     min-width: 360px;
-   object-fit: contain;
+   object-fit: cover;
     max-width: 360px;
   }
 }
