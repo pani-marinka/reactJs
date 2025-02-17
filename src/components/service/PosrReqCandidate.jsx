@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+
 
 export const sendCandidateData = async (candidate) => {
 /**
@@ -24,27 +25,23 @@ export const sendCandidateData = async (candidate) => {
       if (candidate.file) {
         formData.append('file', candidate.file);
       }
-  
-      const response = await fetch('https://wa-server-2-d6303887a0d7.herokuapp.com/api/v1/team-members/join', 
-      {
-        method: 'POST',
-        headers: {
+
+      const response = await axios.post(
+        'https://wa-server-2-d6303887a0d7.herokuapp.com/api/v1/team-members/join',
+        formData,
+        {
+          headers: {
             'Accept': 'application/json'
-        },
-        body: formData,
-      });
+          }
+        }
+      );
   
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      console.log('Response data:', data);
-      return data;
+      console.log('Response data:', response.data);
+      return response.data;
     } catch (error) {
       console.error('Error:', error);
-      throw error;  
-    }
+      throw error;
+    }   
   };  
 
    

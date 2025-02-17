@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, FormLabel, RadioGroup, Radio, FormHelperText, Stack } from '@chakra-ui/react';
+import { FormControl, FormLabel, RadioGroup, Radio, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 
 //toDo custom label

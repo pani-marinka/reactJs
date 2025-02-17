@@ -5,8 +5,7 @@ import  RadioSelect from './RadioSelect';
 import { sendCandidateData  } from './PosrReqCandidate';
 
 import {
-  FormErrorMessage,
-  FormLabel,
+  FormErrorMessage, 
   FormControl,
   Input,
   Button,
@@ -199,8 +198,7 @@ const handleFileChange = (event) => {
 
         const processCandidate = async () => {
             try {
-              const result = await sendCandidateData(updatedCandidate);
-              console.log('Candidate processed successfully:', result);
+              const result = await sendCandidateData(updatedCandidate);             
             } catch (error) { 
               console.error('Processing error:', error);
               setErrorPost(error.message);                       
@@ -215,17 +213,6 @@ const handleFileChange = (event) => {
 
         return viewFormRegistr(successResult);
     };
-
-
-    //   function onSubmit(values) {
-    //     return new Promise((resolve) => {
-    //       setTimeout(() => {
-    //         alert(JSON.stringify(values, null, 2));
-    //         resolve();
-    //       }, 3000);
-    //     });
-    //   }
-
   
     function validateName(value) {
         if (!value) return "Прізвище обов'язкове";

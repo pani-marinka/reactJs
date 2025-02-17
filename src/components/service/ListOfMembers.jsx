@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Flex, Text, Image, Box, Grid } from "@chakra-ui/react"
+import axios from "axios";
 
 export const ListOfMembers = () => {
     
@@ -8,16 +8,12 @@ export const ListOfMembers = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch(
-        `https://wa-server-2-d6303887a0d7.herokuapp.com/api/v1/team-members`
+      const response = await axios.get(
+        "https://wa-server-2-d6303887a0d7.herokuapp.com/api/v1/team-members"
       );
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-      }
-      const data = await response.json();
-      setArrayMembers(data);
+      setArrayMembers(response.data);
     } catch (err) {
-      setError(err.message);
+      setError(err.response ? err.response.data.message : err.message);
     }
   }, []);
 
