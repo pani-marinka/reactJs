@@ -228,7 +228,7 @@ const handleFileChange = (event) => {
 
   
     function validateName(value) {
-        if (!value) return "Призвище обов'язкове";
+        if (!value) return "Прізвище обов'язкове";
         if (!/^[a-zA-Zа-яА-ЯіІїЇєЄ-]+$/.test(value)) {
           return "Прізвище повинно містити лише букви або дефіс";
         }

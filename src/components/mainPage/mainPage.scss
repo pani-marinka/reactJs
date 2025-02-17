@@ -1,5 +1,4 @@
-* {
-  /*margin: 0 auto; /* Центрування по горизонталі */
+* { 
   padding: 0;
   box-sizing: border-box;
   background-color: #F8F8F8;
@@ -7,13 +6,12 @@
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  line-height: 26px;
-  
+  line-height: 26px;  
 }
 
 h2 {
  text-align: center;
-  font-size: 25px;
+  font-size: 40px;
 }
 
 h4 {
@@ -38,9 +36,6 @@ h4 {
   margin: 0 20px;
   min-width: 360px; 
 }
-
-
-
 
 .content {
     margin: 0;
@@ -128,10 +123,17 @@ h4 {
     position: relative;
    /* width: 100%; /* Встановлення ширини на 100% */
    //background-color: transparent;
-    min-width: 360px; 
-    //background: rgba(0,0,0,0.1);
-   background-color: rgba(0,0,0,0.95);  
+    min-width: 360px;   
   }
+
+.main::before {
+    background-color: rgba(0,0,0,0.37);  
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
 
   .blockText {
     // margin-left: auto;
@@ -249,19 +251,26 @@ text-align: center;
   }
 }
 
+.overflow-string {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .whiteLine {
-    height: 30px;
+    height: 50px;
     //background-color: white;
     width: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0;
 }
 
 .usersBlock {
-    margin-top: 20px;
-    padding: 10px;
+
+    padding: 0px;
     background-color: lightgray;
-    border: 1px solid #ccc;
+    //border: 1px solid #ccc;
+    border: none;
   }
 
 @media (max-width: 768px) {

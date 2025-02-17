@@ -1,5 +1,5 @@
 
-import { Text, Image, Box, Grid } from "@chakra-ui/react"
+import { Flex, Text, Image, Box, Grid } from "@chakra-ui/react"
 import React, { useState, useEffect }  from "react";
 
 export const Demo = () => {
@@ -19,9 +19,9 @@ export const Demo = () => {
      const [members, setMembers] = useState([
         {
           id: '1',
-          name: 'Salvador Stewart Flynn Thomas Salva',
-          position: 'Leading specialist of the department',
-          email: 'JeromeKlarkaJerome',
+          name: 'Salvador Stewart Flynn Thomas Salva  Thomas Salvaaaaa',
+          position: 'Leading specialist of the department Leading specialist of the department',
+          email: 'JeromeKlarkaJerome@JeromeKlarkaJeromeJeromeKlarkaJerome',
           phone: '+38 (098) 278 76 24',
           photo: '../images/title.jpg'
         },
@@ -123,28 +123,34 @@ const renderViewMembers = (range = 3, numberShow = 6) => {
               };
           
               for (let i = 0; i < showSize; i++) {
-              const member = members[i]; // Отримуємо кожного члена
+              const member = members[i]; 
 
               memberElements.push(
-                <Box p={4} boxShadow="xl" bg="accent_2" width="282px" height="254px" mx="auto" overflow="hidden" key={member.id}>
+                 <Box boxShadow="xl" 
+                 className="overflow-string"
+                 bg="accent_2" width="370px" height="254px" mx="auto" key={member.id} borderRadius="xl" isTruncated >
+                
                   <Image
+                    
                     src={member.photo}
                     alt={member.name}
                     borderRadius="full"
                     boxSize="70px"
                     mx="auto"
                     mb={3}
+                    mt={4}
                   />
-                  <Text fontSize="md" isTruncated noOfLines={1} mb={4}>
+                  <Text isTruncated fontSize="md"  mb={4}   maxWidth="100%" className="overflow-string">
                     {member.name}
                   </Text>
-                  <Text isTruncated noOfLines={1}>
+               
+                  <Text isTruncated  maxWidth="100%">
                     {member.position}
                   </Text>
-                  <Text isTruncated noOfLines={1}>
+                  <Text isTruncated  maxWidth="100%">
                     {member.email}
                   </Text>
-                  <Text isTruncated noOfLines={1}>
+                  <Text  maxWidth="100%">
                     {member.phone}
                   </Text>
                 </Box>
@@ -176,10 +182,14 @@ const renderViewMembers = (range = 3, numberShow = 6) => {
   // Повертаємо JSX з Grid
   return (
             <>
-            <Grid templateColumns={`repeat(${range}, 1fr)`} gap={4}  color="black.500" textAlign="center" columnGap="2">
+            <Grid templateColumns={`repeat(${range}, 1fr)`}  p={0} m={0}  gap={4}  
+             color="black.500" textAlign="center" columnGap="0"
+             isTruncated
+             >
             {memberElements}
             </Grid>
-            {bottonElements}
+            {bottonElements}       
+            <div className='whiteLine'></div>
             </>
   );
 };
@@ -188,57 +198,3 @@ const renderViewMembers = (range = 3, numberShow = 6) => {
 
   return renderViewMembers(columns, numbers);
 }
-
-
-// return (
-//   <> 
-//   <Grid templateColumns="repeat(3, 1fr)" gap={1} color="black.500" textAlign="center">
-// <Box p={4} boxShadow="xl" bg="accent_2"    width="282px" height="254px" mx="auto" overflow="hidden">
-  
-// <Image
-//         src="../images/title.jpg"
-//         alt="Sample Image"
-//         borderRadius="full" // Кругла форма
-//         boxSize="70px" // Встановлення розміру фото
-//         mx="auto" 
-//         mb={4}
-//       />
-//   <Text fontSize="md" isTruncated noOfLines={1} mb={4}> Salvador Stewart Flynn Thomas Salva  </Text>
-//   <Text isTruncated noOfLines={1} >Leading specialist of the department</Text>
-//   <Text isTruncated noOfLines={1} >JeromeKlarkaJeromeKlarka19233623...</Text>
-//   <Text isTruncated noOfLines={1} > +38 (098) 278 76 24  </Text>
-// </Box>
-// <Box p={4} boxShadow="xl" bg="accent_2"    width="282px" height="254px" mx="auto" overflow="hidden">
-  
-// <Image
-//         src="../images/title.jpg"
-//         alt="Sample Image"
-//         borderRadius="full" // Кругла форма
-//         boxSize="70px" // Встановлення розміру фото
-//         mx="auto" 
-//         mb={4}
-//       />
-//   <Text fontSize="md" isTruncated noOfLines={1} mb={4}> Salvador Stewart Flynn Thomas Salva  </Text>
-//   <Text isTruncated noOfLines={1} >Leading specialist of the department</Text>
-//   <Text isTruncated noOfLines={1} >JeromeKlarkaJeromeKlarka19233623...</Text>
-//   <Text isTruncated noOfLines={1} > +38 (098) 278 76 24  </Text>
-// </Box>
-// <Box p={4} boxShadow="xl" bg="accent_2"    width="282px" height="254px" mx="auto" overflow="hidden">
-  
-// <Image
-//         src="../images/title.jpg"
-//         alt="Sample Image"
-//         borderRadius="full" // Кругла форма
-//         boxSize="70px" // Встановлення розміру фото
-//         mx="auto" 
-//         mb={4}
-//       />
-//   <Text fontSize="md" isTruncated noOfLines={1} mb={4}> Salvador Stewart Flynn Thomas Salva  </Text>
-//   <Text isTruncated noOfLines={1} >Leading specialist of the department</Text>
-//   <Text isTruncated noOfLines={1} >JeromeKlarkaJeromeKlarka19233623...</Text>
-//   <Text isTruncated noOfLines={1} > +38 (098) 278 76 24  </Text>
-// </Box>
-// </Grid>
-// </> 
-// );
-// }

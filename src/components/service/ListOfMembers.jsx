@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Flex, Text, Image, Box, Grid } from "@chakra-ui/react"
 
 export const ListOfMembers = () => {
     
@@ -25,7 +26,7 @@ export const ListOfMembers = () => {
   }, [fetchData]);
 
   return (
-    <div>
+    <div>   
       <div className='whiteLine'></div>
       <h2>Working with GET request</h2>
       <div className='whiteLine'></div>
