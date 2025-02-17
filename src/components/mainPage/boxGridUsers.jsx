@@ -1,5 +1,5 @@
 
-import { Flex, Text, Image, Box, Grid } from "@chakra-ui/react"
+import { Text, Image, Box, Grid } from "@chakra-ui/react"
 import React, { useState, useEffect }  from "react";
 
 export const Demo = () => {
@@ -160,21 +160,21 @@ const renderViewMembers = (range = 3, numberShow = 6) => {
   const  viewBotton = () => {
     if (btn) {
       bottonElements.push (
-          <>
-          <div className='whiteLine'></div>
-          <div className="btn-wrapper">
+        <React.Fragment key="show-more-button">
+        <div className='whiteLine'></div>
+        <div className="btn-wrapper">
           <button className="btn" onClick={handleClick}>Show more</button>
-          </div>
-          </>
+        </div>
+      </React.Fragment>
       );
     } else {
       bottonElements.push (
-        <>
-        <div className='whiteLine'></div>
-        <div className="btn-wrapper">
-        <button className="btn" onClick={handleClick}>Show less</button>
-        </div>
-        </>
+        <React.Fragment key="show-less-button">
+    <div className='whiteLine'></div>
+    <div className="btn-wrapper">
+      <button className="btn" onClick={handleClick}>Show less</button>
+    </div>
+  </React.Fragment>
       );
     };
   }

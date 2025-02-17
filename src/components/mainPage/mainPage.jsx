@@ -57,10 +57,10 @@ return  (
         <> 
     <div className='bodyMain'>
       <header className="header">
-      <div class="content">
-    <div class="corner top-left"></div>
-    <div class="corner bottom-right"></div>
-    <div  class="logo"> FINAL TASK </div>
+      <div className="content">
+    <div className="corner top-left"></div>
+    <div className="corner bottom-right"></div>
+    <div  className="logo"> FINAL TASK </div>
   </div>
 
      <nav className="nav-buttons">

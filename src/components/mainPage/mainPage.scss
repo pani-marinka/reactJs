@@ -90,11 +90,11 @@ h4 {
 .btn {
   width: 100px;
   height: 34px;
-  background-color: #AA43C3;
+  background-color: #AA43C3 !important; 
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 
 .btn.disabled {

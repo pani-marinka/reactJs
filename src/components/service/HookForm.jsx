@@ -147,11 +147,11 @@ const handlePositionChange = (value) => {
             <div className="whiteLine"> </div>
        
             <div className="btn-wrapper">
-            <button
-             className={`btn ${(!isValid || !filePhoto) ? "disabled" : ""}`}   
-             isLoading={false}  
-             isDisabled={!isValid || !filePhoto}
-             type="submit">Sign-Up</button>
+            <Button
+             className={`${(!isValid || !filePhoto) ? "disabled" : "btn"}`}             
+            isLoading={false}  
+            isDisabled={!isValid || !filePhoto}
+             type="submit">Sign-Up</Button>
             </div>
         </form>
       </Box>
@@ -195,7 +195,7 @@ const handleFileChange = (event) => {
     
         setCandidate(updatedCandidate);  // Оновлюємо стан
 
-        console.log("Updated Candidate Object:", updatedCandidate);
+        //console.log("Updated Candidate Object:", updatedCandidate);
 
         const processCandidate = async () => {
             try {
@@ -211,7 +211,7 @@ const handleFileChange = (event) => {
 
         //передати для post & refresh
        if (isValid && filePhoto) setSuccessResult(true); 
-        console.log ('successResult F', successResult)
+      
 
         return viewFormRegistr(successResult);
     };

@@ -12,7 +12,6 @@ export const sendCandidateData = async (candidate) => {
  * @property {string} phone 
  * @property {file} photo 
  */
-console.log("============== cand", candidate);
 
     try {
         const formData = new FormData();
